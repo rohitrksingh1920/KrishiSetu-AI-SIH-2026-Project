@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans:ital@1&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------
+   Design tokens as CSS values (kept in sync with src/theme/tokens.js,
+   which is the source of truth for anything colors need to be
+   computed dynamically in JS, e.g. chart fills, conic-gradients).
+---------------------------------------------------------------- */
+:root {
+  --ink: #182b20;
+  --paper: #f1ecda;
+  --paper-deep: #e6dec1;
+  --card: #fbf8ee;
+  --monsoon: #1e3a5f;
+  --monsoon-deep: #132a45;
+  --ndvi: #3f6b35;
+  --ndvi-light: #6fa84f;
+  --turmeric: #d9a404;
+  --soil: #8b4a2b;
+  --alert: #b23a34;
+  --line: #cfc5a2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ks-root {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--ink);
+}
+.ks-display {
+  font-family: "Fraunces", serif;
+}
+.ks-mono {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.ks-texture {
+  background-image: radial-gradient(var(--line) 0.6px, transparent 0.6px);
+  background-size: 14px 14px;
+  background-position: -6px -6px;
+}
+
+.ks-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.ks-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.ks-scroll::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+
+@keyframes ks-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.ks-pulse {
+  animation: ks-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes ks-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ks-rise {
+  animation: ks-rise 0.35s ease both;
+}
+
+@keyframes ks-sweep {
+  0% { transform: translateX(-40%); }
+  100% { transform: translateX(140%); }
+}
+.ks-sweep {
+  animation: ks-sweep 5s linear infinite;
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--turmeric);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.ks-liftable {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.ks-liftable:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(24, 43, 32, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ks-sweep,
+  .ks-pulse,
+  .ks-rise {
+    animation: none !important;
+  }
+}
