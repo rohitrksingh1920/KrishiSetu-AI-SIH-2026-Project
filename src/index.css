@@ -4,11 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---------------------------------------------------------------
-   Design tokens as CSS values (kept in sync with src/theme/tokens.js,
+/* Design tokens as CSS values (kept in sync with src/theme/tokens.js,
    which is the source of truth for anything colors need to be
-   computed dynamically in JS, e.g. chart fills, conic-gradients).
----------------------------------------------------------------- */
+   computed dynamically in JS, e.g. chart fills, conic-gradients). */
 :root {
   --ink: #182b20;
   --paper: #f1ecda;
@@ -60,24 +58,39 @@
 }
 
 @keyframes ks-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.45; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
 }
 .ks-pulse {
   animation: ks-pulse 1.6s ease-in-out infinite;
 }
 
 @keyframes ks-rise {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .ks-rise {
   animation: ks-rise 0.35s ease both;
 }
 
 @keyframes ks-sweep {
-  0% { transform: translateX(-40%); }
-  100% { transform: translateX(140%); }
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(140%);
+  }
 }
 .ks-sweep {
   animation: ks-sweep 5s linear infinite;
@@ -96,7 +109,9 @@ a:focus-visible {
 }
 
 .ks-liftable {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 .ks-liftable:hover {
   transform: translateY(-1.5px);

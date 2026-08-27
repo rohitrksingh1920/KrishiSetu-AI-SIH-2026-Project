@@ -89,30 +89,121 @@ export const stages = [
 ];
 
 export const farmers = [
-  { id: "GGN-114", name: "Ram Kumar", village: "Sohna", crop: "Sugarcane", last: "2 hrs ago", status: "Briefed" },
-  { id: "GGN-088", name: "Suresh Yadav", village: "Bhondsi", crop: "Wheat", last: "1 day ago", status: "Briefed" },
-  { id: "GGN-201", name: "Meena Devi", village: "Sohna", crop: "Mustard", last: "3 days ago", status: "Escalated" },
-  { id: "GGN-042", name: "Iqbal Khan", village: "Rewasan", crop: "Sugarcane", last: "5 hrs ago", status: "Briefed" },
-  { id: "GGN-176", name: "Pooja Sharma", village: "Bhondsi", crop: "Bajra", last: "4 days ago", status: "Offline cache" },
+  {
+    id: "GGN-114",
+    name: "Ram Kumar",
+    village: "Sohna",
+    crop: "Sugarcane",
+    last: "2 hrs ago",
+    status: "Briefed",
+  },
+  {
+    id: "GGN-088",
+    name: "Suresh Yadav",
+    village: "Bhondsi",
+    crop: "Wheat",
+    last: "1 day ago",
+    status: "Briefed",
+  },
+  {
+    id: "GGN-201",
+    name: "Meena Devi",
+    village: "Sohna",
+    crop: "Mustard",
+    last: "3 days ago",
+    status: "Escalated",
+  },
+  {
+    id: "GGN-042",
+    name: "Iqbal Khan",
+    village: "Rewasan",
+    crop: "Sugarcane",
+    last: "5 hrs ago",
+    status: "Briefed",
+  },
+  {
+    id: "GGN-176",
+    name: "Pooja Sharma",
+    village: "Bhondsi",
+    crop: "Bajra",
+    last: "4 days ago",
+    status: "Offline cache",
+  },
 ];
 
 export const escalations = [
-  { id: "ESC-3391", farmer: "Meena Devi", issue: "Mustard leaf curl, low vision-model confidence (44%)", channel: "IVR", sla: "6h left" },
-  { id: "ESC-3388", farmer: "Iqbal Khan", issue: "Ratoon gap > 20%, requested KVK visit", channel: "Web", sla: "1d left" },
-  { id: "ESC-3379", farmer: "Ram Kumar", issue: "Zinc dosage query beyond canonical rule scope", channel: "WhatsApp", sla: "Closed" },
+  {
+    id: "ESC-3391",
+    farmer: "Meena Devi",
+    issue: "Mustard leaf curl, low vision-model confidence (44%)",
+    channel: "IVR",
+    sla: "6h left",
+  },
+  {
+    id: "ESC-3388",
+    farmer: "Iqbal Khan",
+    issue: "Ratoon gap > 20%, requested KVK visit",
+    channel: "Web",
+    sla: "1d left",
+  },
+  {
+    id: "ESC-3379",
+    farmer: "Ram Kumar",
+    issue: "Zinc dosage query beyond canonical rule scope",
+    channel: "WhatsApp",
+    sla: "Closed",
+  },
 ];
 
 export const claims = [
-  { id: "CLM-1042", farmer: "Meena Devi", cause: "Waterlogging", status: "Generated", ndviDrop: "31%" },
-  { id: "CLM-1039", farmer: "Suresh Yadav", cause: "Hailstorm", status: "Sent to farmer", ndviDrop: "44%" },
-  { id: "CLM-1031", farmer: "Ram Kumar", cause: "Pest stress", status: "Draft", ndviDrop: "9%" },
+  {
+    id: "CLM-1042",
+    farmer: "Meena Devi",
+    cause: "Waterlogging",
+    status: "Generated",
+    ndviDrop: "31%",
+  },
+  {
+    id: "CLM-1039",
+    farmer: "Suresh Yadav",
+    cause: "Hailstorm",
+    status: "Sent to farmer",
+    ndviDrop: "44%",
+  },
+  {
+    id: "CLM-1031",
+    farmer: "Ram Kumar",
+    cause: "Pest stress",
+    status: "Draft",
+    ndviDrop: "9%",
+  },
 ];
 
 export const ivrScript = [
-  { spk: "IVR", en: "Namaste. Press 1 for Hindi, 2 for English.", hi: "नमस्ते। हिंदी के लिए 1, अंग्रेज़ी के लिए 2 दबाएं।" },
+  {
+    spk: "IVR",
+    en: "Namaste. Press 1 for Hindi, 2 for English.",
+    hi: "नमस्ते। हिंदी के लिए 1, अंग्रेज़ी के लिए 2 दबाएं।",
+  },
   { spk: "Farmer", en: "[Presses 1]", hi: "[1 दबाया]" },
-  { spk: "IVR", en: "Your weekly briefing: apply zinc before Thursday. Do not spray Tuesday–Wednesday.", hi: "आपकी साप्ताहिक सलाह: गुरुवार से पहले जिंक डालें। मंगल-बुध छिड़काव न करें।" },
-  { spk: "Farmer", en: "How much zinc sulphate per acre?", hi: "प्रति एकड़ कितना जिंक सल्फेट?" },
-  { spk: "IVR", en: "Based on your Soil Health Card, apply 25kg/acre. This is a general guideline — connecting you to KVK Sohna for exact dosage.", hi: "आपके मृदा कार्ड अनुसार 25 किग्रा/एकड़। सटीक मात्रा हेतु KVK सोहना से जोड़ रहे हैं।" },
-  { spk: "System", en: "Escalation ticket ESC-3402 created.", hi: "एस्केलेशन टिकट ESC-3402 बनाया गया।" },
+  {
+    spk: "IVR",
+    en: "Your weekly briefing: apply zinc before Thursday. Do not spray Tuesday–Wednesday.",
+    hi: "आपकी साप्ताहिक सलाह: गुरुवार से पहले जिंक डालें। मंगल-बुध छिड़काव न करें।",
+  },
+  {
+    spk: "Farmer",
+    en: "How much zinc sulphate per acre?",
+    hi: "प्रति एकड़ कितना जिंक सल्फेट?",
+  },
+  {
+    spk: "IVR",
+    en: "Based on your Soil Health Card, apply 25kg/acre. This is a general guideline — connecting you to KVK Sohna for exact dosage.",
+    hi: "आपके मृदा कार्ड अनुसार 25 किग्रा/एकड़। सटीक मात्रा हेतु KVK सोहना से जोड़ रहे हैं।",
+  },
+  {
+    spk: "System",
+    en: "Escalation ticket ESC-3402 created.",
+    hi: "एस्केलेशन टिकट ESC-3402 बनाया गया।",
+  },
 ];

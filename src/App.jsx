@@ -17,7 +17,10 @@ export default function App() {
   const [tab, setTab] = useState("home");
 
   return (
-    <div className="ks-root w-full min-h-screen flex flex-col" style={{ background: C.paper }}>
+    <div
+      className="ks-root w-full min-h-screen flex flex-col"
+      style={{ background: C.paper }}
+    >
       <Header role={role} setRole={setRole} lang={lang} setLang={setLang} />
 
       {role === "officer" ? (
