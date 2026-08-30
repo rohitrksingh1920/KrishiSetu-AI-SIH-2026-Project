@@ -19,8 +19,17 @@ export default function App() {
   const [showAbout, setShowAbout] = useState(false);
 
   return (
-    <div className="ks-root w-full min-h-screen flex flex-col" style={{ background: C.paper }}>
-      <Header role={role} setRole={setRole} lang={lang} setLang={setLang} onInfoClick={() => setShowAbout(true)} />
+    <div
+      className="ks-root w-full min-h-screen flex flex-col"
+      style={{ background: C.paper }}
+    >
+      <Header
+        role={role}
+        setRole={setRole}
+        lang={lang}
+        setLang={setLang}
+        onInfoClick={() => setShowAbout(true)}
+      />
       <AboutModal open={showAbout} onClose={() => setShowAbout(false)} />
 
       {role === "officer" ? (

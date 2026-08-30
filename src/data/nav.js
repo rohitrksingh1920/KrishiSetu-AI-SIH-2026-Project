@@ -1,6 +1,15 @@
 import {
-  Home, MapPin, Sprout, Camera, FileText, MessageCircle,
-  BarChart3, Users, AlertTriangle, ClipboardList, Satellite,
+  Home,
+  MapPin,
+  Sprout,
+  Camera,
+  FileText,
+  MessageCircle,
+  BarChart3,
+  Users,
+  AlertTriangle,
+  ClipboardList,
+  Satellite,
 } from "lucide-react";
 
 export const farmerNav = [

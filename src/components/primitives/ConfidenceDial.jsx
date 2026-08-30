@@ -13,7 +13,13 @@ export default function ConfidenceDial({ value, size = 46 }) {
     >
       <div
         className="rounded-full flex items-center justify-center ks-mono font-semibold"
-        style={{ width: size - 10, height: size - 10, background: C.card, fontSize: size * 0.26, color: C.ink }}
+        style={{
+          width: size - 10,
+          height: size - 10,
+          background: C.card,
+          fontSize: size * 0.26,
+          color: C.ink,
+        }}
       >
         {value}
       </div>

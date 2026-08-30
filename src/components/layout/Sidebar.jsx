@@ -27,7 +27,9 @@ export default function Sidebar({ tab, setTab }) {
           </button>
         );
       })}
-      <div className="mt-auto pt-3 text-[11px] opacity-55 ks-mono">Demo Farmer: Ram Kumar</div>
+      <div className="mt-auto pt-3 text-[11px] opacity-55 ks-mono">
+        Demo Farmer: Ram Kumar
+      </div>
     </aside>
   );
 }

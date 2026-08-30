@@ -1,13 +1,23 @@
 import React from "react";
 import { X, Check, Minus, CircleDot } from "lucide-react";
 import { C } from "../../theme/tokens.js";
-import { psInfo, comparisonRows, competitors, feasibilityStats } from "../../data/pitchData.js";
+import {
+  psInfo,
+  comparisonRows,
+  competitors,
+  feasibilityStats,
+} from "../../data/pitchData.js";
 
 function Cell({ value }) {
-  if (value === true) return <Check size={15} style={{ color: C.ndvi }} className="mx-auto" />;
-  if (value === false) return <Minus size={14} className="mx-auto opacity-30" />;
+  if (value === true)
+    return <Check size={15} style={{ color: C.ndvi }} className="mx-auto" />;
+  if (value === false)
+    return <Minus size={14} className="mx-auto opacity-30" />;
   return (
-    <span className="ks-mono text-[10px] px-1.5 py-0.5 rounded" style={{ background: C.paperDeep }}>
+    <span
+      className="ks-mono text-[10px] px-1.5 py-0.5 rounded"
+      style={{ background: C.paperDeep }}
+    >
       {value}
     </span>
   );
@@ -25,24 +35,42 @@ export default function AboutModal({ open, onClose }) {
         className="ks-card rounded-xl w-full max-w-3xl my-6 ks-rise"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between px-5 py-4" style={{ borderBottom: `1px solid ${C.line}` }}>
+        <div
+          className="flex items-start justify-between px-5 py-4"
+          style={{ borderBottom: `1px solid ${C.line}` }}
+        >
           <div>
-            <div className="ks-mono text-[10.5px] uppercase tracking-wide opacity-55">{psInfo.hackathon}</div>
-            <h2 className="ks-display text-[22px] font-semibold mt-0.5">KrishiSetu AI</h2>
+            <div className="ks-mono text-[10.5px] uppercase tracking-wide opacity-55">
+              {psInfo.hackathon}
+            </div>
+            <h2 className="ks-display text-[22px] font-semibold mt-0.5">
+              KrishiSetu AI
+            </h2>
             <div className="text-[12.5px] opacity-70 mt-1">
-              PS {psInfo.psId} · {psInfo.psTitle} · {psInfo.theme} · {psInfo.category} · Team {psInfo.teamName} ({psInfo.teamId})
+              PS {psInfo.psId} · {psInfo.psTitle} · {psInfo.theme} ·{" "}
+              {psInfo.category} · Team {psInfo.teamName} ({psInfo.teamId})
             </div>
           </div>
-          <button onClick={onClose} className="p-1.5 rounded-md shrink-0" style={{ background: C.paperDeep }} aria-label="Close">
+          <button
+            onClick={onClose}
+            className="p-1.5 rounded-md shrink-0"
+            style={{ background: C.paperDeep }}
+            aria-label="Close"
+          >
             <X size={16} />
           </button>
         </div>
 
         <div className="p-5 space-y-6">
           <div>
-            <h3 className="font-semibold text-[14.5px] mb-2">Why KrishiSetu, not another advisory app</h3>
+            <h3 className="font-semibold text-[14.5px] mb-2">
+              Why KrishiSetu, not another advisory app
+            </h3>
             <div className="overflow-x-auto ks-scroll">
-              <table className="w-full text-[12.5px] border-separate" style={{ borderSpacing: 0 }}>
+              <table
+                className="w-full text-[12.5px] border-separate"
+                style={{ borderSpacing: 0 }}
+              >
                 <thead>
                   <tr>
                     <th className="text-left px-2 py-1.5"></th>
@@ -50,7 +78,10 @@ export default function AboutModal({ open, onClose }) {
                       <th
                         key={c.id}
                         className="px-2 py-1.5 text-center ks-mono text-[10.5px] uppercase tracking-wide"
-                        style={{ color: c.highlight ? C.ndvi : "inherit", opacity: c.highlight ? 1 : 0.6 }}
+                        style={{
+                          color: c.highlight ? C.ndvi : "inherit",
+                          opacity: c.highlight ? 1 : 0.6,
+                        }}
                       >
                         {c.label}
                       </th>
@@ -59,15 +90,31 @@ export default function AboutModal({ open, onClose }) {
                 </thead>
                 <tbody>
                   {comparisonRows.map((r, i) => (
-                    <tr key={r.feature} style={{ background: i % 2 ? "transparent" : `${C.paperDeep}55` }}>
+                    <tr
+                      key={r.feature}
+                      style={{
+                        background: i % 2 ? "transparent" : `${C.paperDeep}55`,
+                      }}
+                    >
                       <td className="px-2 py-2 font-medium">{r.feature}</td>
-                      <td className="px-2 py-2 text-center" style={{ background: `${C.ndvi}0F` }}>
+                      <td
+                        className="px-2 py-2 text-center"
+                        style={{ background: `${C.ndvi}0F` }}
+                      >
                         <Cell value={r.ks} />
                       </td>
-                      <td className="px-2 py-2 text-center"><Cell value={r.meghdoot} /></td>
-                      <td className="px-2 py-2 text-center"><Cell value={r.kisan} /></td>
-                      <td className="px-2 py-2 text-center"><Cell value={r.plantix} /></td>
-                      <td className="px-2 py-2 text-center"><Cell value={r.npss} /></td>
+                      <td className="px-2 py-2 text-center">
+                        <Cell value={r.meghdoot} />
+                      </td>
+                      <td className="px-2 py-2 text-center">
+                        <Cell value={r.kisan} />
+                      </td>
+                      <td className="px-2 py-2 text-center">
+                        <Cell value={r.plantix} />
+                      </td>
+                      <td className="px-2 py-2 text-center">
+                        <Cell value={r.npss} />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -76,16 +123,31 @@ export default function AboutModal({ open, onClose }) {
           </div>
 
           <div>
-            <h3 className="font-semibold text-[14.5px] mb-2">Feasibility, backed by PIB releases</h3>
+            <h3 className="font-semibold text-[14.5px] mb-2">
+              Feasibility, backed by PIB releases
+            </h3>
             <div className="grid sm:grid-cols-2 gap-2.5">
               {feasibilityStats.map((s) => (
-                <div key={s.label} className="rounded-md p-3 flex items-start gap-2.5" style={{ background: C.paper, border: `1px solid ${C.line}` }}>
-                  <CircleDot size={13} className="mt-0.5 shrink-0" style={{ color: C.soil }} />
+                <div
+                  key={s.label}
+                  className="rounded-md p-3 flex items-start gap-2.5"
+                  style={{ background: C.paper, border: `1px solid ${C.line}` }}
+                >
+                  <CircleDot
+                    size={13}
+                    className="mt-0.5 shrink-0"
+                    style={{ color: C.soil }}
+                  />
                   <div>
-                    <div className="ks-display font-semibold text-[16px]" style={{ color: C.monsoon }}>
+                    <div
+                      className="ks-display font-semibold text-[16px]"
+                      style={{ color: C.monsoon }}
+                    >
                       {s.stat}
                     </div>
-                    <div className="text-[12px] opacity-70 leading-snug">{s.label}</div>
+                    <div className="text-[12px] opacity-70 leading-snug">
+                      {s.label}
+                    </div>
                   </div>
                 </div>
               ))}
